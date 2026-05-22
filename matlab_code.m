@@ -1,0 +1,12 @@
+file_time = fopen("time.bin", "r");
+time_arr = fread(file_time,"double");
+fclose(file_time);
+file_x = fopen("x.bin", "r");
+x_arr = fread(file_x,"double");
+fclose(file_x);
+file_y = fopen("y.bin", "r");
+time_arr = fread(file_y,"double");
+fclose(file_y);
+T = meshgrid(time_arr);
+z = (sin(15*(3.14159265358979323846/180)) * T) - 0.5*9.81*T.^2;
+surf(x_arr,y_arr,z);
