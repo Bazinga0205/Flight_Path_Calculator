@@ -124,7 +124,7 @@ int main() {
     fstream fout;
     fout.open("time.bin", ios::out | ios::binary);
     if (fout){
-        fout.write(reinterpret_cast<char*>(&arr_time), sizeof(arr_time));
+        fout.write(reinterpret_cast<char*>(&arr_time), sizeof(double));
         //fout.write(reinterpret_cast<char*>(&arr_x), sizeof(arr_x));
         //fout.write(reinterpret_cast<char*>(&arr_y), sizeof(arr_y));
 
@@ -133,12 +133,12 @@ int main() {
      }
      fout.open("x.bin", ios::out| ios::binary );
      if (fout){
-      fout.write(reinterpret_cast<char*>(&arr_x), sizeof(arr_x));
+      fout.write(reinterpret_cast<char*>(&arr_x), sizeof(double));
      fout.close();
      }
      fout.open("y.bin", ios::in | ios::binary);
      if(fout){
-      fout.write(reinterpret_cast<char*>(&arr_y), sizeof(arr_y));
+      fout.write(reinterpret_cast<char*>(&arr_y), sizeof(double));
      fout.close();
      }
     return 0;
